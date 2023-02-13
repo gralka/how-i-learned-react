@@ -1,5 +1,4 @@
-import Card from './components/Card';
-import ExpenseList from './components/ExpenseList';
+import ExpenseList from './components/Expenses/ExpenseList';
 
 function App() {
   const expenses = [

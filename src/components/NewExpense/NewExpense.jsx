@@ -5,7 +5,7 @@ const NewExpense = ({ onAddExpense }) => {
   const saveExpenseData = (enteredExpenseData) => {
     const expenseData = {
       ...enteredExpenseData,
-      id: Math.random().toString(),
+      id: Math.random().toString(), // not really unique but good enough here!
     };
 
     onAddExpense(expenseData);

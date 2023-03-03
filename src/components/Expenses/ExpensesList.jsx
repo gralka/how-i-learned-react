@@ -1,21 +1,28 @@
 import ExpenseItem from './ExpenseItem';
 
+import './ExpensesList.css';
+
 const ExpensesList = ({ items }) => {
-  let expensesContent = <p>No expenses found.</p>;
+  let expensesContent = (
+    <p className="expenses-list__fallback">No expenses found.</p>
+  );
 
   if (items.length > 0) {
     expensesContent = items.map(expense => (
-      <ExpenseItem
-        key={expense.id}
-        date={expense.date}
-        title={expense.title}
-        price={expense.amount}
-      />
+      <li key={expense.id}>
+        <ExpenseItem
+          date={expense.date}
+          title={expense.title}
+          price={expense.amount}
+        />
+      </li>
     ));
   }
 
   return (
-    <div>{expensesContent}</div>
+    <ul className="expenses-list">
+      {expensesContent}
+    </ul>
   );
 };
 

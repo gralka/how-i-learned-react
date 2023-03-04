@@ -7,21 +7,21 @@ const ExpensesList = ({ items }) => {
     <p className="expenses-list__fallback">No expenses found.</p>
   );
 
-  if (items.length > 0) {
-    expensesContent = items.map(expense => (
-      <li key={expense.id}>
-        <ExpenseItem
-          date={expense.date}
-          title={expense.title}
-          price={expense.amount}
-        />
-      </li>
-    ));
+  if (items.length === 0) {
+    return <h2 className="expenses-list__fallback">Found no expenses.</h2>;
   }
 
   return (
     <ul className="expenses-list">
-      {expensesContent}
+      {items.map(expense => (
+        <li key={expense.id}>
+          <ExpenseItem
+            date={expense.date}
+            title={expense.title}
+            price={expense.amount}
+          />
+        </li>
+      ))}
     </ul>
   );
 };

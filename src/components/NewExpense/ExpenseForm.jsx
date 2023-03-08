@@ -33,39 +33,39 @@ const ExpenseForm = ({ onCancel, onSaveExpenseData }) => {
 
   return (
     <form onSubmit={submitHandler}>
-      <div className='new-expense__controls'>
-        <div className='new-expense__control'>
-          <label htmlFor='title'>Title</label>
+      <div className="new-expense__controls">
+        <div className="new-expense__control">
+          <label htmlFor="title">Title</label>
           <input
-            id='title'
-            type='text'
+            id="title"
+            type="text"
             value={enteredTitle}
             onChange={titleChangeHandler} />
         </div> 
-        <div className='new-expense__control'>
-          <label htmlFor='amount'>Amount</label>
+        <div className="new-expense__control">
+          <label htmlFor="amount">Amount</label>
           <input
-            id='amount'
-            type='number'
-            min='0.01'
-            step='0.01'
+            id="amount"
+            type="number"
+            min="0.01"
+            step="0.01"
             value={enteredAmount}
             onChange={amountChnageHandler} />
         </div> 
-        <div className='new-expense__control'>
-          <label htmlFor='date'>Date</label>
+        <div className="new-expense__control">
+          <label htmlFor="date">Date</label>
           <input
-            id='date'
-            type='date'
-            mindate='2019-01-01'
-            maxdate='2025-12-31'
+            id="date"
+            type="date"
+            mindate="2019-01-01"
+            maxdate="2025-12-31"
             value={enteredDate}
             onChange={dateChangeHandler} />
         </div> 
       </div>
-      <div className='new-expense__actions'>
-        <button type='button' onClick={onCancel}>Cancel</button>
-        <button type='submit'>Add Expense</button>
+      <div className="new-expense__actions">
+        <button type="button" onClick={onCancel}>Cancel</button>
+        <button type="submit">Add Expense</button>
       </div>
     </form>
   );
